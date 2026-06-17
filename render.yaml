@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: reel-app
+    env: node
+    plan: starter
+    buildCommand: npm install
+    startCommand: npm start
+    disk:
+      name: reel-data
+      mountPath: /data
+      sizeGB: 1
