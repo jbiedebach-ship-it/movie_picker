@@ -47,10 +47,15 @@ On the GitHub repo page, click **Fork** in the top right. This copies the repo t
 - **Build Command:** `npm install`
 - **Start Command:** `node server.js`
 - **Instance Type:** Starter ($7/month) — required for persistent disk
-1. Under **Disks**, add a disk:
-- **Name:** `reel-data`
-- **Mount Path:** `/data`
-- **Size:** 1 GB
+
+> ⚠️ **Don’t skip this step:** Under **Disks**, add a disk with:
+> 
+> - **Name:** `reel-data`
+> - **Mount Path:** `/data`
+> - **Size:** 1 GB
+> 
+> Without this disk, the app will crash on startup (it can’t create its data folder) and your watch history won’t survive a redeploy. This is the single most common setup mistake — do it before clicking Deploy.
+
 1. Click **Deploy**
 
 Deployment takes 2–3 minutes. You’ll get a URL like `your-app-name.onrender.com`.
